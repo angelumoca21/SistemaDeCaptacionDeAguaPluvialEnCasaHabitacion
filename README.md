@@ -59,14 +59,15 @@ Esto, en el proceso de captación de agua de lluvia, significa que el agua estar
 
 ## **Circuito**
 ![Circuito](https://github.com/angelumoca21/SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion/blob/main/imagenes/Imagen2.png)
+
 ## **Lecturas de sensor**
-Con el microcontrolador ESP32 se realiza la obtención de mediciones y algunas tomas de decisiones, de igual forma se crearon algunas reglas en OpenHAB para la automatización. 
+Con el microcontrolador ESP32 se obtienen las mediciones y diversas tomas de decisiones, de igual forma se crearon algunas reglas en OpenHAB para la automatización. 
 
 ## **Envío de información**
-Se utilizó MQTT como protocolo de comunicación, enviando el estatus del sensor por un tema en específico para su control desde OpenHab.
+Se utilizó MQTT como protocolo de comunicación, enviando el estatus del sensor por un tema en específico para su monitoreo desde OpenHAB.
 
 ## **Recepción de información**
-Con el ESP32 suscrito a un tema en general y la programación del microcontrolador se recibieron los datos para activar o desactivar ciertas acciones.
+Con el ESP32 suscrito a un tema en específico y la programación del microcontrolador se reciben los datos para activar o desactivar ciertos actuadores.
 
 ## **Automatización**
 El sistema automatizado consta de 6 sensores: 
@@ -77,3 +78,4 @@ El sistema automatizado consta de 6 sensores:
 
 ## **Visualización de datos:** 
 Para visualización de los datos se utilizó OpenHAB, se modeló la maqueta teniendo 3 áreas donde los actuadores y sensores trabajan: techo, cisterna y contenedor de primeras lluvias.
+![Interfaz]()
