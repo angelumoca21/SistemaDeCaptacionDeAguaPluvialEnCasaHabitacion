@@ -43,7 +43,7 @@ Esto, en el proceso de captación de agua de lluvia, significa que el agua estar
 - Bomba de agua.
 - Resistencias.
 
-## **Material necesario:**
+## **Herramientas computacionales:**
 - Máquina virtual con Ubuntu.
 - Computadora.
 - IDE de Arduino.
