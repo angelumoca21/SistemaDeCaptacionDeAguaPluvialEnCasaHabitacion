@@ -78,4 +78,6 @@ El sistema automatizado consta de 6 sensores:
 
 ## **Visualización de datos:** 
 Para visualización de los datos se utilizó OpenHAB, se modeló la maqueta teniendo 3 áreas donde los actuadores y sensores trabajan: techo, cisterna y contenedor de primeras lluvias.
-![Interfaz]()
+![Interfaz](https://github.com/angelumoca21/SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion/blob/main/imagenes/open1.png)
+![Sensores](https://github.com/angelumoca21/SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion/blob/main/imagenes/open2.png)
+![Actuadores](https://github.com/angelumoca21/SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion/blob/main/imagenes/open3.png)
