@@ -34,6 +34,8 @@ Consiste en el uso de una cisterna para asegurar el abastecimiento por una tempo
 
 Esto, en el proceso de captación de agua de lluvia, significa que el agua estará lista para ser utilizada, solo con abrir la llave o a donde se vaya a depositar para la actividad que se desee realizar.
 
+![SCAP](https://github.com/angelumoca21/SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion/blob/main/imagenes/Imagen1.png)
+
 ## **Material necesario**
 - ESP32 y cable de alimentación
 - Fuente de voltaje de 12 volts.
@@ -56,7 +58,7 @@ Esto, en el proceso de captación de agua de lluvia, significa que el agua estar
 - MQTT.
 
 ## **Circuito**
-
+![Circuito](https://github.com/angelumoca21/SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion/blob/main/imagenes/Imagen2.png)
 ## **Lecturas de sensor**
 Con el microcontrolador ESP32 se realiza la obtención de mediciones y algunas tomas de decisiones, de igual forma se crearon algunas reglas en OpenHAB para la automatización. 
 
