@@ -1,2 +1,3 @@
-# SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion
- Repositorio que contiene proyecto Capstone del Diplomado de Samsung Innovation Campus
+# Sistema de captación de agua pluvial en casa habitación
+
+## **Objetivo**
