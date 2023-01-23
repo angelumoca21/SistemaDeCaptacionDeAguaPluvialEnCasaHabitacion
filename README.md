@@ -28,3 +28,18 @@ Consiste en el uso de una cisterna para asegurar el abastecimiento por una tempo
 
 **5.Distribución**
 Esto, en el proceso de captación de agua de lluvia, significa que el agua estará lista para ser utilizada, solo con abrir la llave o a donde se vaya a depositar para la actividad que se desee realizar.
+
+## **Material necesario:**
+- ESP32 y cable de alimentación
+- Fuente de voltaje de 12 volts.
+- Protoboards.
+- Jumpers y cables.
+- Sensor de lluvia.
+- Sensor ultrasónico.
+- Electroválvula.
+- Manguera y conectores de manguera.
+- Relevadores.
+- Sensores flotadores.
+- Bomba de agua.
+- Resistencias.
+
