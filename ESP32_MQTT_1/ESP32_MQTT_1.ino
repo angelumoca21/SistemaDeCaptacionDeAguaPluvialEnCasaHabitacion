@@ -1,10 +1,7 @@
 /*
-   Proyecto Capstone: Recolección de agua pluvial .....
+   Proyecto Capstone
    por: Angel Morales
    Fecha: 04 de enero de 2023
-
-   Componente     PinESP32CAM     Estados lógicos
-   ledStatus------GPIO 33---------On=>LOW, Off=>HIGH
 */
 
 //Bibliotecas
@@ -193,13 +190,13 @@ void callback(char* topic, byte* message, unsigned int length)
     {
       Serial.println("Valvula encendida");
       digitalWrite(VALVULA,1);
-    }// fin del if (String(topic) == "esp32/output")
+    }// fin del if(messageTemp == "ON")
     else if (messageTemp == "OFF")
     {
       Serial.println("Valvula apagada");
       digitalWrite(VALVULA,0);
-    }// fin del else if(messageTemp == "false")
-  }// fin del if (String(topic) == "esp32/output")
+    }// fin del else if(messageTemp == "OFF")
+  }// fin del if String(topic) == "casaMaqueta/contenedor/valvula"
 }// fin del void callback
 
 // Función para reconectarse
