@@ -131,7 +131,7 @@ void loop()
 
     edoSLluvia = analogRead(SLLUVIA);
     Serial.println(edoSLluvia);
-    if (edoSLluvia <= 2600)
+    if (edoSLluvia <= 2000)
       client.publish("casaMaqueta/techo/sLluvia", "ON");
     else
       client.publish("casaMaqueta/techo/sLluvia", "OFF");
