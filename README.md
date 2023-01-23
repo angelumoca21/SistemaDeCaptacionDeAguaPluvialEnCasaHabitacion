@@ -43,3 +43,29 @@ Esto, en el proceso de captación de agua de lluvia, significa que el agua estar
 - Bomba de agua.
 - Resistencias.
 
+## **Material necesario:**
+- Máquina virtual con Ubuntu.
+- Computadora.
+- IDE de Arduino.
+- OpenHAB.
+- MQTT.
+
+## **Circuito:**
+
+## **Lecturas de sensor:**
+Con el microcontrolador ESP32 se realiza la obtención de mediciones y algunas tomas de decisiones, de igual forma se crearon algunas reglas en OpenHAB para la automatización. 
+
+## **Envío de información:**
+Se utilizó MQTT como protocolo de comunicación, enviando el estatus del sensor por un tema en específico para su control desde OpenHab.
+
+## **Recepción de información:**
+Con el ESP32 suscrito a un tema en general y la programación del microcontrolador se recibieron los datos para activar o desactivar ciertas acciones.
+
+## **Automatización:**
+El sistema automatizado consta de 6 sensores: 
+- **Un sensor de lluvia:** ubicado en el techo para controlar cuándo se tiene que abrir la válvula del separador de primeras lluvias.
+- **Un sensor de nivel:** en el tinaco que controla el encendido y apagado de la bomba de la cisterna.
+- **Un par de sensores de nivel:**  en el separador de primeras lluvias que abrirá y cerrará la válvula para drenarlo y estar listo para las siguientes lluvias.
+- **Un par de sensores de flotador**: se encuentran en la cisterna para indicar el nivel mínimo y el máximo.
+
+- **Visualización de datos:** para visualización de los datos se utilizó OpenHAB, se modeló la maqueta teniendo 3 áreas donde los actuadores y sensores trabajan: techo, cisterna y contenedor de primeras lluvias.
