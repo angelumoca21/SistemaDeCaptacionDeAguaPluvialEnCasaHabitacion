@@ -6,9 +6,10 @@ Diseñar e implementar un sistema de captación de agua pluvial beneficiando a m
 
 ## **Introducción**
 
-Más de 10 millones de mexicanos no cuentan con servicio de agua potable. Sólo en la CDMX al menos 250 mil personas viven sin conexión a la red, y millones más tienen un servicio intermitente.
-En la CDMX, el 70% del agua que usamos viene del subsuelo, la extracción desmedida ha provocado que la ciudad se hunda. 
-Captar agua de la lluvia y almacenarla reduce la cantidad de agua extraída y permitir que el acuífero se recargue. La CDMX es la tercera ciudad con mayor estrés hídrico en el mundo, esto es porque extraemos mucha más agua de la que se vuelve a recargar. En las zonas donde el abasto por la red es más deficiente, la captación pluvial se vuelve de enorme importancia, evitando la compra de miles de pipas al año, ahorrando grandes cantidades de energía y dinero. El 30% del agua de la red en la Ciudad de México proviene del sistema Lerma-Cutzamala, cuyas aguas deben ser bombeadas 150 km de distancia y 1 km vertical desde sus cuencas fuera del Valle de México. Se sabe que la energía requerida para este proceso de bombeo es parecida al consumo energético total de la ciudad de Puebla.
+Más de 10 millones de mexicanos no cuentan con servicio de agua potable. Sólo en la CDMX al menos 250 mil personas viven sin conexión a la red y millones más tienen un servicio intermitente.
+En la CDMX, el 70% del agua que usamos viene del subsuelo y la extracción desmedida  ha provocado que la ciudad se hunda. 
+Captar el agua de la lluvia y almacenarla, reduce la cantidad de agua extraída y permite que el acuífero se recargue. La CDMX es la tercera ciudad con mayor estrés hídrico en el mundo porque extraemos mucha más agua de la que se vuelve a recargar. 
+En las zonas donde la red de abasto es más deficiente la captación pluvial se vuelve de enorme importancia,ya que evita la compra de miles de pipas al año, ahorrando grandes cantidades de energía y dinero. El 30% del agua de la red en la Ciudad de México proviene del sistema Lerma-Cutzamala, cuyas aguas deben ser bombeadas 150 km de distancia y 1 km vertical desde sus cuencas fuera del Valle de México. Se sabe que la energía requerida para este proceso de bombeo es parecida al consumo energético total de la ciudad de Puebla.
 
 ## **Principios de funcionamiento**
 
@@ -24,7 +25,7 @@ La separación de primera lluvia es una técnica sencilla para mejorar la calida
 
 **3.Sistema de filtración\***
 
-Una de las características de la captación de agua de lluvia es que ésta se recolecta y no puede ser utilizada para el consumo humano de manera inmediata; únicamente para actividades domésticas como: lavar ropa, los trastes, el aseo de interiores y exteriores, regar el jardín, el servicio del baño, etc. Sin embargo, con un buen tren de filtración puede llegar a ser de consumo humano.
+Una de las características de la captación de agua de lluvia es que ésta se recolecta y no puede ser utilizada para el consumo humano de manera inmediata, únicamente es para actividades domésticas como: lavar ropa, los trastes, el aseo de interiores y exteriores, regar el jardín, el servicio del baño, etc. Sin embargo, con un buen tren de filtración puede llegar a ser de consumo humano.
 
 **4.Almacenamiento**
 
@@ -71,7 +72,7 @@ Con el ESP32 suscrito a un tema en específico y la programación del microcontr
 
 ## **Automatización**
 El sistema automatizado consta de 6 sensores: 
-- **Un sensor de lluvia:** ubicado en el techo para controlar cuándo se tiene que abrir la válvula del separador de primeras lluvias.
+- **Un sensor de lluvia:** ubicado en el techo para controlar cuando se tiene que abrir la válvula del separador de primeras lluvias.
 - **Un sensor de nivel:** en el tinaco que controla el encendido y apagado de la bomba de la cisterna.
 - **Un par de sensores de nivel:**  en el separador de primeras lluvias que abrirá y cerrará la válvula para drenarlo y estar listo para las siguientes lluvias.
 - **Un par de sensores de flotador**: se encuentran en la cisterna para indicar el nivel mínimo y el máximo.
