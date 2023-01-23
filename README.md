@@ -9,7 +9,7 @@ Diseñar e implementar un sistema de captación de agua pluvial beneficiando a m
 Más de 10 millones de mexicanos no cuentan con servicio de agua potable. Sólo en la CDMX al menos 250 mil personas viven sin conexión a la red y millones más tienen un servicio intermitente.
 En la CDMX, el 70% del agua que usamos viene del subsuelo y la extracción desmedida  ha provocado que la ciudad se hunda. 
 Captar el agua de la lluvia y almacenarla, reduce la cantidad de agua extraída y permite que el acuífero se recargue. La CDMX es la tercera ciudad con mayor estrés hídrico en el mundo porque extraemos mucha más agua de la que se vuelve a recargar. 
-En las zonas donde la red de abasto es más deficiente la captación pluvial se vuelve de enorme importancia,ya que evita la compra de miles de pipas al año, ahorrando grandes cantidades de energía y dinero. El 30% del agua de la red en la Ciudad de México proviene del sistema Lerma-Cutzamala, cuyas aguas deben ser bombeadas 150 km de distancia y 1 km vertical desde sus cuencas fuera del Valle de México. Se sabe que la energía requerida para este proceso de bombeo es parecida al consumo energético total de la ciudad de Puebla.
+En las zonas donde la red de abasto es más deficiente la captación pluvial se vuelve de enorme importancia, ya que evita la compra de miles de pipas al año, ahorrando grandes cantidades de energía y dinero. El 30% del agua de la red en la Ciudad de México proviene del sistema Lerma-Cutzamala, cuyas aguas deben ser bombeadas 150 km de distancia y 1 km vertical desde sus cuencas fuera del Valle de México. Se sabe que la energía requerida para este proceso de bombeo es parecida al consumo energético total de la ciudad de Puebla.
 
 ## **Principios de funcionamiento**
 
@@ -33,7 +33,7 @@ Consiste en el uso de una cisterna para asegurar el abastecimiento por una tempo
 
 **5.Distribución**
 
-Esto, en el proceso de captación de agua de lluvia, significa que el agua estará lista para ser utilizada, solo con abrir la llave o a donde se vaya a depositar para la actividad que se desee realizar.
+Significa que el agua que se encuentra en el tinaco estará lista para ser utilizada solo con abrir la llave.
 
 ![SCAP](https://github.com/angelumoca21/SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion/blob/main/imagenes/Imagen1.png)
 
@@ -62,19 +62,19 @@ Esto, en el proceso de captación de agua de lluvia, significa que el agua estar
 ![Circuito](https://github.com/angelumoca21/SistemaDeCaptacionDeAguaPluvialEnCasaHabitacion/blob/main/imagenes/Imagen2.png)
 
 ## **Lecturas de sensor**
-Con el microcontrolador ESP32 se obtienen las mediciones y diversas tomas de decisiones, de igual forma se crearon algunas reglas en OpenHAB para la automatización. 
+Con el microcontrolador ESP32 se obtienen las mediciones y se realizan diversas tomas de decisiones. También se crearon algunas reglas en OpenHAB para la automatización. 
 
 ## **Envío de información**
 Se utilizó MQTT como protocolo de comunicación, enviando el estatus del sensor por un tema en específico para su monitoreo desde OpenHAB.
 
 ## **Recepción de información**
-Con el ESP32 suscrito a un tema en específico y la programación del microcontrolador se reciben los datos para activar o desactivar ciertos actuadores.
+Con el ESP32 suscrito a un tema en específico y la programación del microcontrolador, se reciben los datos para activar o desactivar ciertos actuadores.
 
 ## **Automatización**
 El sistema automatizado consta de 6 sensores: 
 - **Un sensor de lluvia:** ubicado en el techo para controlar cuando se tiene que abrir la válvula del separador de primeras lluvias.
 - **Un sensor de nivel:** en el tinaco que controla el encendido y apagado de la bomba de la cisterna.
-- **Un par de sensores de nivel:**  en el separador de primeras lluvias que abrirá y cerrará la válvula para drenarlo y estar listo para las siguientes lluvias.
+- **Un par de sensores de nivel:** en el separador de primeras lluvias que abrirá y cerrará la válvula para drenarlo y estar listo para las siguientes lluvias.
 - **Un par de sensores de flotador**: se encuentran en la cisterna para indicar el nivel mínimo y el máximo.
 
 ## **Visualización de datos:** 
