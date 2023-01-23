@@ -11,12 +11,15 @@
 #include <WiFi.h>  // Biblioteca para el control de WiFi
 #include <PubSubClient.h> //Biblioteca para conexion MQTT
 
+#define SLLUVIA 32
 #define SNIVEL1 22
 #define SNIVEL2 23
 #define S1CONTENEDOR1SLLUVIAS 34
 #define S2CONTENEDOR1SLLUVIAS 35
 #define BOMBA 21
 #define VALVULA 19
+#define ECHO 18
+#define TRIGGER 5 
 
 //Datos de WiFi
 const char* ssid = "QWERTYUIOP";  // Aquí debes poner el nombre de tu red
@@ -31,6 +34,7 @@ WiFiClient espClient; // Este objeto maneja los datos de conexion WiFi
 PubSubClient client(espClient); // Este objeto maneja los datos de conexion al broker
 
 // Variables
+int edoSLluvia = 0;
 int statusLedPin = 33;
 long timeNow, timeLast; // Variables de control de tiempo no bloqueante
 int wait = 1000;  // Indica la espera cada 5 segundos para envío de mensajes MQTT
@@ -40,11 +44,16 @@ int edoS1Contenedor1sLluvias = 0;
 int edoS2Contenedor1sLluvias = 0;
 int edoBomba = 0;
 int edoValvula = 0;
+float d = 0; 
+float t = 0;
 // Inicialización del programa
 void setup()
 {
   // Iniciar comunicación serial
   Serial.begin (115200);
+  pinMode(ECHO, INPUT);
+  pinMode(TRIGGER, OUTPUT);
+  digitalWrite(TRIGGER, LOW);
   pinMode (SNIVEL1, INPUT);
   pinMode (SNIVEL2, INPUT);
   pinMode (BOMBA, OUTPUT);
@@ -97,10 +106,9 @@ void loop()
   if (timeNow - timeLast > wait)
   { // Manda un mensaje por MQTT cada cinco segundos
     timeLast = timeNow; // Actualización de seguimiento de tiempo
+    
     edoSensorNivel1 = digitalRead(SNIVEL1);
     edoSensorNivel2 = digitalRead(SNIVEL2);
-    ///////////char dataString[4];// Define una arreglo de caracteres para enviarlos por MQTT, especifica la longitud del mensaje en 8 caracteres
-    ///////////dtostrf(edoSensorNivel1, 1, 0, dataString);
     if (edoSensorNivel1 == 0)
       client.publish("casaMaqueta/cisterna/s1", "OFF");
     else
@@ -123,8 +131,23 @@ void loop()
       client.publish("casaMaqueta/contenedor/sensor2", "ON");
     else
       client.publish("casaMaqueta/contenedor/sensor2", "OFF");
-    /////////////client.publish("casaMaqueta/cisterna/s1", dataString);
-    //client.publish("codigoIoT/ejemplos/MQTT", dataString); // Esta es la función que envía los datos por MQTT, especifica el tema y el valor
+
+    edoSLluvia = analogRead(SLLUVIA);
+    Serial.println(edoSLluvia);
+    if (edoSLluvia <= 2600)
+      client.publish("casaMaqueta/techo/sLluvia", "ON");
+    else
+      client.publish("casaMaqueta/techo/sLluvia", "OFF");
+
+    digitalWrite(TRIGGER, HIGH);
+    delayMicroseconds(10);   
+    digitalWrite(TRIGGER, LOW);
+    t = pulseIn(ECHO, HIGH);
+    d = t/59; 
+    //Serial.println(d);
+    char dataString[10];// Define una arreglo de caracteres para enviarlos por MQTT, especifica la longitud del mensaje en 8 caracteres
+    dtostrf(d, 3, 2, dataString);
+    client.publish("casaMaqueta/techo/sUltrasonico", dataString);
   }// fin del if (timeNow - timeLast > wait)
 }// fin del void loop ()
 
